@@ -108,4 +108,4 @@ if __name__ == "__main__":
     solution_1 = solve_puzzle_1()
     print(f"The calibration value for puzzle 1 is: {solution_1}")
     solution_2 = solve_puzzle_2()
-    print(f"The calibration value for puzzle 1 is: {solution_2}")
+    print(f"The calibration value for puzzle 2 is: {solution_2}")
