@@ -41,7 +41,7 @@ def calculate_card_score(cards: list) -> int:
 
 def find_winning_cards(card: Card) -> int:
     """
-    Determine the score of a card.
+    Find the number of winning cards.
     """
     winning_numbers = card[1]
     numbers_you_have = card[2]
