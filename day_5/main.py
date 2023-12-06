@@ -1,6 +1,7 @@
 # source, destination, length
 Conversion = tuple[int, int, int]
 ConversionSet = list[Conversion]
+# Start of range, end of range
 SeedPair = tuple[int, int]
 
 
@@ -33,7 +34,7 @@ def process_seed_line(seeds_line: str, for_seed_pairs: bool) -> list[int] | list
 
 def process_input(
     puzzle_input: list[str], for_seed_pairs=False
-) -> tuple[list[int], list[Conversion]] | tuple[list[SeedPair], list[Conversion]]:
+) -> tuple[list[int], ConversionSet] | tuple[list[SeedPair], ConversionSet]:
     """
     Process the input into a list of ints (if for_seed_pairs is False) or a list of tuples (if
     for_seed_pairs is True), and a list of Conversions.
