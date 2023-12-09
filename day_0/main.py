@@ -1,8 +1,11 @@
-def get_input() -> list[str]:
+def get_input(puzzle_input: list[str] = None) -> list[str]:
     """
     Read the input file and return a list of strings.
     Each string represents a line in the input file.
     """
+    if puzzle_input:
+        return puzzle_input
+
     with open("day_0/input/input.txt", "r") as f:
         return f.read().splitlines()
 
@@ -11,8 +14,7 @@ def solve_puzzle_1(puzzle_input: list[str] = None) -> int:
     """
     Solve puzzle 1.
     """
-    if puzzle_input is None:
-        puzzle_input = get_input()
+    puzzle_input = get_input(puzzle_input)
 
     return 0
 
@@ -21,8 +23,7 @@ def solve_puzzle_2(puzzle_input: list[str] = None) -> int:
     """
     Solve puzzle 2.
     """
-    if puzzle_input is None:
-        puzzle_input = get_input()
+    puzzle_input = get_input(puzzle_input)
 
     return 0
 
