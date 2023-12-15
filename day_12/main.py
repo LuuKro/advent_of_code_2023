@@ -41,11 +41,9 @@ def find_number_of_arrangements(row: Row, cache: dict) -> int:
             springs.index("#"), max_group_start
         )  # If there's an earlier broken spring, that's the last possible option
 
-    first_group, remaining_groups = groups[0], groups[1:]
     arrangements = 0
-
     for group_start in range(max_group_start + 1):
-        group_end = group_start + first_group
+        group_end = group_start + groups[0]
         potential_group = springs[group_start:group_end]
 
         if not all(char != "." for char in potential_group):
@@ -55,7 +53,7 @@ def find_number_of_arrangements(row: Row, cache: dict) -> int:
             continue  # Group is not separated from next
 
         remaining_springs = springs[group_end + 1 :]
-        partial_row = (remaining_springs, remaining_groups)
+        partial_row = (remaining_springs, groups[1:])
         if partial_row not in cache:
             cache[partial_row] = find_number_of_arrangements(partial_row, cache)
         arrangements += cache[partial_row]
