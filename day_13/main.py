@@ -1,6 +1,3 @@
-from functools import cache
-
-
 def get_input(puzzle_input: list[str] = None) -> str:
     """
     Read the input file and return a list of strings.
